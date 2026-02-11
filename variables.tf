@@ -1,0 +1,25 @@
+
+# mandatory, user should supply
+variable "ami_id" {
+    type = string
+    default = "ami-0220d79f3f480ecf5"
+}
+
+# Optional, default value is t3.micro .user cal always override
+# t3.micro, t3.medium, t3.small
+variable "instance_type" {
+    default = "t3.micro"  
+    type = string
+    validation {
+      condition = contains(["t3.micro", "t3.medium", "t3.small"], var.instance_type)
+      error_message = "instance_type can only be one of t3.micro, t3.medium, t3.small"
+
+    }
+}
+
+# mandatory, user should supply
+variable "security_group_ids" {
+    type = list(string)
+    default = ["sg-00421b02a5b34bda5"]
+}
+
