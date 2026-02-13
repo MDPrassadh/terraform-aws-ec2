@@ -20,6 +20,6 @@ variable "instance_type" {
 # mandatory, user should supply
 variable "security_group_ids" {
     type = list(string)
-    default = ["sg-00421b02a5b34bda5"]
+    default = ["sg-01bef4c9d65ea702e"]
 }
 
